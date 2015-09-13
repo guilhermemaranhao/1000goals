@@ -28,7 +28,7 @@ class ViewController: UIViewController {
    
        marcadorGol.setImage(scaledImage, forState: UIControlState.Normal)
         
-      // UIGraphicsEndImageContext()
+       UIGraphicsEndImageContext()
         
         
         
