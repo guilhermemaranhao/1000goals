@@ -10,13 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var marcadorGol: UIImageView!
+    @IBOutlet weak var marcadorGol: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.m
+        
         let imagem = UIImage(named: "ball_icon")
-        marcadorGol.image = imagem
+        let size = CGSizeMake(imagem!.size.width / 3.0, imagem!.size.height / 3.0)
+        let hasAlpha = true
+        let scale: CGFloat = 0.0 // Utilizar o fator de escala da tela principal
+      
+        UIGraphicsBeginImageContextWithOptions(size, hasAlpha, scale)
+       imagem?.drawInRect(CGRect(origin: CGPointZero, size: size))
+
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+   
+       marcadorGol.setImage(scaledImage, forState: UIControlState.Normal)
+        
+      // UIGraphicsEndImageContext()
+        
+        
+        
         
     }
 
