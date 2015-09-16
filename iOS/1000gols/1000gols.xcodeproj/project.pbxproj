@@ -14,6 +14,7 @@
 		A5C099781B9FCAD600230060 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C099771B9FCAD600230060 /* Images.xcassets */; };
 		A5C0997B1B9FCAD600230060 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C099791B9FCAD600230060 /* LaunchScreen.xib */; };
 		A5C099871B9FCAD600230060 /* _000golsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C099861B9FCAD600230060 /* _000golsTests.swift */; };
+		A5E987141BA8F0FB000050B8 /* Gol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E987131BA8F0FB000050B8 /* Gol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A5C099801B9FCAD600230060 /* 1000golsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1000golsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C099851B9FCAD600230060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5C099861B9FCAD600230060 /* _000golsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _000golsTests.swift; sourceTree = "<group>"; };
+		A5E987131BA8F0FB000050B8 /* Gol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		A5C0995F1B9FCAD500230060 = {
 			isa = PBXGroup;
 			children = (
+				A5E987131BA8F0FB000050B8 /* Gol.swift */,
 				A5C0996A1B9FCAD500230060 /* 1000gols */,
 				A5C099831B9FCAD600230060 /* 1000golsTests */,
 				A5C099691B9FCAD500230060 /* Products */,
@@ -217,6 +220,7 @@
 			files = (
 				A5C099731B9FCAD600230060 /* ViewController.swift in Sources */,
 				A5C0996E1B9FCAD600230060 /* AppDelegate.swift in Sources */,
+				A5E987141BA8F0FB000050B8 /* Gol.swift in Sources */,
 				A5C099711B9FCAD600230060 /* _000gols.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +421,7 @@
 				A5C0998C1B9FCAD600230060 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5C0998D1B9FCAD600230060 /* Build configuration list for PBXNativeTarget "1000golsTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				A5C0998F1B9FCAD600230060 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
