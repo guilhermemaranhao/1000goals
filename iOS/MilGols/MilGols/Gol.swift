@@ -27,6 +27,18 @@ class Gol
             println("Erro ao registrar Gol \(erro), \(erro?.userInfo)")
         }
         
+        //Visualizando gol registrado.
+        let fetchRequest = NSFetchRequest(entityName: "Gol")
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &erro) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            println("\(results)")
+        }
+        else
+        {
+            println("Gols não encontrados \(erro), \(erro!.userInfo)")
+        }
+        
     }
     
     private func getGolInstance() -> NSManagedObject
