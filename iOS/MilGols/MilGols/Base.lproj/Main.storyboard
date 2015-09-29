@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z1B-3r-iyX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MilGols" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,15 +33,56 @@
                             <constraint firstAttribute="centerX" secondItem="fKX-ic-Meh" secondAttribute="centerX" constant="6" id="IoI-61-TYD"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="b0T-uI-EMe"/>
                     <connections>
                         <outlet property="marcadorGol" destination="fKX-ic-Meh" id="x9r-ka-zvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-335" y="-598"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="2Kj-Ri-hVG">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Z1B-3r-iyX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="5TN-NA-VQD">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="qDa-qg-XBA"/>
+                        <segue destination="EpV-by-GXo" kind="relationship" relationship="viewControllers" id="Oph-0o-ZZG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0I-Xf-bMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1083" y="-209"/>
+        </scene>
+        <!--Gols-->
+        <scene sceneID="zji-ry-sLx">
+            <objects>
+                <viewController id="EpV-by-GXo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1fT-Vi-E4j"/>
+                        <viewControllerLayoutGuide type="bottom" id="L33-AR-lDh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZJD-vK-cC2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gols" image="rsz_gol_listagem" id="agg-aQ-lz0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WrK-wM-eh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="101"/>
         </scene>
     </scenes>
     <resources>
         <image name="ball_icon" width="147" height="144"/>
+        <image name="rsz_gol_listagem" width="30" height="30"/>
     </resources>
 </document>

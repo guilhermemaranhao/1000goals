@@ -22,21 +22,27 @@ class Gol
         gol.setValue(false, forKey: "detalhado")
         
         var erro: NSError?
-        if !managedContext.save(&erro)
+        do
         {
-            println("Erro ao registrar Gol \(erro), \(erro?.userInfo)")
+            try managedContext.save()
+        }
+        catch let erro1 as NSError
+        {
+            erro = erro1
+            print("Erro ao registrar Gol \(erro), \(erro?.userInfo)")
         }
         
         //Visualizando gol registrado.
         let fetchRequest = NSFetchRequest(entityName: "Gol")
-        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &erro) as? [NSManagedObject]
         
-        if let results = fetchedResults {
-            println("\(results)")
+        do{
+            let results = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            print("\(results)")
         }
-        else
+        catch let erro1 as NSError
         {
-            println("Gols não encontrados \(erro), \(erro!.userInfo)")
+            erro = erro1
+            print("Gols não encontrados \(erro), \(erro!.userInfo)")
         }
         
     }

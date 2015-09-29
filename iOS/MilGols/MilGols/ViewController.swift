@@ -13,9 +13,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var marcadorGol: UIButton!
 
-
     @IBAction func registrarGol(sender: AnyObject) {
-        var gol = Gol()
+        let gol = Gol()
         gol.registrarGol()
     }
 }

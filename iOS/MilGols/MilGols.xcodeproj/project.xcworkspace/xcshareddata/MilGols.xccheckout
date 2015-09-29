@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7DA18D87-B83B-4BD9-8BE6-34594EE47B21</string>
+	<string>387542CF-BB75-4775-8FA6-1DBE683B1C86</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>MilGols</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2CBCEE1E0A15094B886D8989DF0EFE187ECE8141</key>
 		<string>https://bitbucket.org/scrummasters/1000gols.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS/MilGols/MilGols.xcodeproj/project.xcworkspace</string>
+	<string>iOS/MilGols/MilGols/MilGols.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2CBCEE1E0A15094B886D8989DF0EFE187ECE8141</key>
-		<string>../../../..</string>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://bitbucket.org/scrummasters/1000gols.git</string>

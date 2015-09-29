@@ -5,6 +5,6 @@
         <attribute name="detalhado" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Gol" positionX="-45" positionY="0" width="128" height="75"/>
+        <element name="Gol" positionX="-36" positionY="9" width="128" height="75"/>
     </elements>
 </model>

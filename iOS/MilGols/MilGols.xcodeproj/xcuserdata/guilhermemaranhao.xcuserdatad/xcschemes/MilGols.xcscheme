@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5E9872B1BACE8E1000050B8"
+               BlueprintIdentifier = "A5E987631BAD04BD000050B8"
                BuildableName = "MilGols.app"
                BlueprintName = "MilGols"
                ReferencedContainer = "container:MilGols.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5E987431BACE8E2000050B8"
+               BlueprintIdentifier = "A5E9877B1BAD04BD000050B8"
                BuildableName = "MilGolsTests.xctest"
                BlueprintName = "MilGolsTests"
                ReferencedContainer = "container:MilGols.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5E987431BACE8E2000050B8"
+               BlueprintIdentifier = "A5E9877B1BAD04BD000050B8"
                BuildableName = "MilGolsTests.xctest"
                BlueprintName = "MilGolsTests"
                ReferencedContainer = "container:MilGols.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A5E9872B1BACE8E1000050B8"
+            BlueprintIdentifier = "A5E987631BAD04BD000050B8"
             BuildableName = "MilGols.app"
             BlueprintName = "MilGols"
             ReferencedContainer = "container:MilGols.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A5E9872B1BACE8E1000050B8"
+            BlueprintIdentifier = "A5E987631BAD04BD000050B8"
             BuildableName = "MilGols.app"
             BlueprintName = "MilGols"
             ReferencedContainer = "container:MilGols.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A5E9872B1BACE8E1000050B8"
+            BlueprintIdentifier = "A5E987631BAD04BD000050B8"
             BuildableName = "MilGols.app"
             BlueprintName = "MilGols"
             ReferencedContainer = "container:MilGols.xcodeproj">
