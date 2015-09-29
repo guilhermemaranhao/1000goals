@@ -38,6 +38,9 @@ class Gol
         do{
             let results = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             print("\(results)")
+            print("Primeiro gol marcado: \(results?.first)")
+            print("Último gol marcado: \(results?.last)")
+            print("quantidade de gols marcados: \(results?.count)")
         }
         catch let erro1 as NSError
         {
