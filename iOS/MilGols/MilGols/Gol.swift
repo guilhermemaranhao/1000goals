@@ -58,5 +58,21 @@ class Gol
         let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
         return NSManagedObject(entity: entityGol!, insertIntoManagedObjectContext: managedContext)
     }
+    
+    func getGolsNaoDetalhados()
+    {
+        let consultaGols = NSFetchRequest(entityName: "Gol")
+        consultaGols.predicate
+        
+        do
+        {
+            let golsNaoDetalhados = try managedContext.executeFetchRequest(consultaGols) as? [NSManagedObject]
+            gols
+        }
+        catch let erro as NSError
+        {
+            
+        }
+    }
 
 }

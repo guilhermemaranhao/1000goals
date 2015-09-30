@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5A881161BBB2FEB00B3C1DF /* ListagemGolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A881151BBB2FEB00B3C1DF /* ListagemGolsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A5A881181BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A881171BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift */; settings = {ASSET_TAGS = (); }; };
 		A5E9876A1BAD04BD000050B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E987691BAD04BD000050B8 /* AppDelegate.swift */; };
 		A5E9876D1BAD04BD000050B8 /* MilGols.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5E9876B1BAD04BD000050B8 /* MilGols.xcdatamodeld */; };
 		A5E987741BAD04BD000050B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E987731BAD04BD000050B8 /* Images.xcassets */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5A881151BBB2FEB00B3C1DF /* ListagemGolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListagemGolsViewController.swift; sourceTree = "<group>"; };
+		A5A881171BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelulaGolNaoDetalhado.swift; sourceTree = "<group>"; };
 		A5E987641BAD04BD000050B8 /* MilGols.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilGols.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E987681BAD04BD000050B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5E987691BAD04BD000050B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				A5E9878D1BAD058A000050B8 /* ViewController.swift */,
+				A5A881151BBB2FEB00B3C1DF /* ListagemGolsViewController.swift */,
+				A5A881171BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -236,7 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A881161BBB2FEB00B3C1DF /* ListagemGolsViewController.swift in Sources */,
 				A5E9876A1BAD04BD000050B8 /* AppDelegate.swift in Sources */,
+				A5A881181BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift in Sources */,
 				A5E9878E1BAD058A000050B8 /* Gol.swift in Sources */,
 				A5E9878F1BAD058A000050B8 /* ViewController.swift in Sources */,
 				A5E9876D1BAD04BD000050B8 /* MilGols.xcdatamodeld in Sources */,
