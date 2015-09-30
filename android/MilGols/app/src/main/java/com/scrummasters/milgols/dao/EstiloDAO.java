@@ -1,5 +1,4 @@
 package com.scrummasters.milgols.dao;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
@@ -8,7 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.scrummasters.milgols.Logger;
 import com.scrummasters.milgols.model.Estilo;
-import com.scrummasters.milgols.model.Gol;
 
 /**
  * Created by tiago on 30/09/15.
