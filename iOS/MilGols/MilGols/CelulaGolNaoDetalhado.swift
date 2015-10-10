@@ -9,9 +9,6 @@
 import UIKit
 
 class CelulaGolNaoDetalhado: UITableViewCell {
-
-    
-    @IBOutlet weak var descricao: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -62,17 +62,11 @@ class Gol
     func getGolsNaoDetalhados()
     {
         let consultaGols = NSFetchRequest(entityName: "Gol")
-        consultaGols.predicate
         
-        do
-        {
-            let golsNaoDetalhados = try managedContext.executeFetchRequest(consultaGols) as? [NSManagedObject]
-            gols
-        }
-        catch let erro as NSError
-        {
-            
-        }
+        let criteria = NSPredicate(format: "detalhado == false", consultaGols)
+        
+        criteria.finalize()
+        
     }
 
 }

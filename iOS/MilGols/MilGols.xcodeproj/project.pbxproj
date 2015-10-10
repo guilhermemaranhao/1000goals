@@ -64,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A58638F61BC49E3000588BDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5A881171BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		A5E9875B1BAD04BD000050B8 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +93,7 @@
 		A5E987661BAD04BD000050B8 /* MilGols */ = {
 			isa = PBXGroup;
 			children = (
+				A58638F61BC49E3000588BDE /* View */,
 				A5E987921BAD05E3000050B8 /* Main.storyboard */,
 				A5E987901BAD058E000050B8 /* Model */,
 				A5E987911BAD0594000050B8 /* Controller */,
@@ -135,7 +144,6 @@
 			children = (
 				A5E9878D1BAD058A000050B8 /* ViewController.swift */,
 				A5A881151BBB2FEB00B3C1DF /* ListagemGolsViewController.swift */,
-				A5A881171BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

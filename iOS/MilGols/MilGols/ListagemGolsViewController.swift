@@ -9,11 +9,12 @@
 import UIKit
 
 class ListagemGolsViewController: UITableViewController {
-
-    @IBOutlet weak var tabelaGols: UITableView!
+    
+    var gol = Gol()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tableView.registerNib(UINib(nibName: "GolAtual", bundle: nil), forCellReuseIdentifier: "GolAtual")
        // tabelaGols.dataSource =
 
         // Do any additional setup after loading the view.
@@ -26,11 +27,26 @@ class ListagemGolsViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView
+        //gol.getGolsNaoDetalhados()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        //let data =
         
+        let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("GolAtual", forIndexPath: indexPath) as UITableViewCell
+        
+        let cell = dequeued as! CelulaGolNaoDetalhado
+        cell.textLabel?.text = "Teste - Gol Não detalhado!"
+        return cell
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
 
