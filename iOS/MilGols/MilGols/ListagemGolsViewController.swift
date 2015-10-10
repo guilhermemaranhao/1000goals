@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class ListagemGolsViewController: UITableViewController {
     
     var gol = Gol()
+    private var managedContext: NSManagedObjectContext!
+    var golsNaoDetalhados = [Gol]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.registerNib(UINib(nibName: "GolAtual", bundle: nil), forCellReuseIdentifier: "GolAtual")
-       // tabelaGols.dataSource =
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext!
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,21 +30,36 @@ class ListagemGolsViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        recarregarGolsNaoDetalhados()
+        self.tableView.reloadData()
         //gol.getGolsNaoDetalhados()
     }
     
+    func recarregarGolsNaoDetalhados()
+    {
+        let fetchRequest = NSFetchRequest(entityName: "Gol")
+        
+        do {
+            if let gols = try managedContext.executeFetchRequest(fetchRequest) as? [Gol] {
+                golsNaoDetalhados = gols
+            }
+        } catch {
+            fatalError("Erro ao carregar listagem de gols não detalhados")
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return golsNaoDetalhados.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        //let data =
-        
         let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("GolAtual", forIndexPath: indexPath) as UITableViewCell
         
+        let gol = golsNaoDetalhados[indexPath.row]
         let cell = dequeued as! CelulaGolNaoDetalhado
-        cell.textLabel?.text = "Teste - Gol Não detalhado!"
+        cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
+        
         return cell
     }
     

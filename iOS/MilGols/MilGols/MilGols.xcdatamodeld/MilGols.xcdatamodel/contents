@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Gol" syncable="YES">
-        <attribute name="datahora" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="detalhado" optional="YES" attributeType="Boolean" syncable="YES"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Gol" representedClassName=".Gol" syncable="YES">
+        <attribute name="datahora" attributeType="Date" syncable="YES"/>
+        <attribute name="detalhado" attributeType="Boolean" syncable="YES"/>
     </entity>
     <elements>
         <element name="Gol" positionX="-36" positionY="9" width="128" height="75"/>
