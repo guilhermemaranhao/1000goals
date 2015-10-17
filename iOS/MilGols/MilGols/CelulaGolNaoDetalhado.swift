@@ -12,6 +12,7 @@ class CelulaGolNaoDetalhado: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         // Initialization code
     }
 

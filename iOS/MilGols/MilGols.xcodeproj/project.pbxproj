@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A540A7CF1BD1E78B008AC3A0 /* DetalhamentoGolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540A7CE1BD1E78B008AC3A0 /* DetalhamentoGolTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A5A881161BBB2FEB00B3C1DF /* ListagemGolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A881151BBB2FEB00B3C1DF /* ListagemGolsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A5A881181BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A881171BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift */; settings = {ASSET_TAGS = (); }; };
 		A5AA7CB11BC9A5AF001CDF2F /* Gol+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA7CB01BC9A5AE001CDF2F /* Gol+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A540A7CE1BD1E78B008AC3A0 /* DetalhamentoGolTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhamentoGolTableViewController.swift; sourceTree = "<group>"; };
 		A5A881151BBB2FEB00B3C1DF /* ListagemGolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListagemGolsViewController.swift; sourceTree = "<group>"; };
 		A5A881171BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelulaGolNaoDetalhado.swift; sourceTree = "<group>"; };
 		A5AA7CB01BC9A5AE001CDF2F /* Gol+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gol+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				A5E9878D1BAD058A000050B8 /* ViewController.swift */,
 				A5A881151BBB2FEB00B3C1DF /* ListagemGolsViewController.swift */,
+				A540A7CE1BD1E78B008AC3A0 /* DetalhamentoGolTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				A5A881161BBB2FEB00B3C1DF /* ListagemGolsViewController.swift in Sources */,
 				A5E9876A1BAD04BD000050B8 /* AppDelegate.swift in Sources */,
+				A540A7CF1BD1E78B008AC3A0 /* DetalhamentoGolTableViewController.swift in Sources */,
 				A5A881181BBB6AA400B3C1DF /* CelulaGolNaoDetalhado.swift in Sources */,
 				A5AA7CB11BC9A5AF001CDF2F /* Gol+CoreDataProperties.swift in Sources */,
 				A5E9878E1BAD058A000050B8 /* Gol.swift in Sources */,

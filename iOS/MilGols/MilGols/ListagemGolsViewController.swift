@@ -88,9 +88,9 @@ class ListagemGolsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        //let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("GolAtual", forIndexPath: indexPath) as UITableViewCell
+        let cell: CelulaGolNaoDetalhado = tableView.dequeueReusableCellWithIdentifier("GolAtual", forIndexPath: indexPath) as! CelulaGolNaoDetalhado
         
-        let cell = CelulaGolNaoDetalhado()
+      //  let cell = CelulaGolNaoDetalhado()
         if (segmentedControl.selectedSegmentIndex == segmentoGolsNaoDetalhados)
         {
             let gol = golsNaoDetalhados[indexPath.section][indexPath.row]
