@@ -11,11 +11,9 @@ import CoreData
 
 class Gol: NSManagedObject
 {
-    private var managedContext: NSManagedObjectContext!
     
-    func registrarGol(managedContext: NSManagedObjectContext)
+    func registrarGol(managedContext: NSManagedObjectContext?)
     {
-        self.managedContext = managedContext
         let dataCorrente = NSDate()
         self.datahora = dataCorrente
         self.detalhado = false
@@ -23,7 +21,7 @@ class Gol: NSManagedObject
         var erro: NSError?
         do
         {
-            try managedContext.save()
+            try managedContext!.save()
         }
         catch let erro1 as NSError
         {
@@ -35,7 +33,7 @@ class Gol: NSManagedObject
         let fetchRequest = NSFetchRequest(entityName: "Gol")
         
         do{
-            let results = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            let results = try managedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             for result in results! {
                 if let dataHora = result.valueForKey("datahora") as? NSDate, detalhado = result.valueForKey("detalhado") as? Bool {
                     print("Gol! \(dataHora) - \(detalhado)")
@@ -50,14 +48,26 @@ class Gol: NSManagedObject
         
     }
     
-    func getGolsNaoDetalhados()
+    func getGolsNaoDetalhados(managedContext: NSManagedObjectContext?) -> [Gol]
     {
-        let consultaGols = NSFetchRequest(entityName: "Gol")
+        let fetchRequest = NSFetchRequest(entityName: "Gol")
         
-        let criteria = NSPredicate(format: "detalhado == false", consultaGols)
+        let criteria = NSPredicate(format: "detalhado == false")
+        fetchRequest.predicate = criteria
         
-        criteria.finalize()
-        
+        var erro: NSError?
+        var golsNaoDetalhados = [Gol]()
+        do{
+            if let results = try managedContext!.executeFetchRequest(fetchRequest) as? [Gol] {
+                golsNaoDetalhados = results
+            }
+        }
+        catch let erro1 as NSError
+        {
+            erro = erro1
+            print("Gols não encontrados \(erro), \(erro!.userInfo)")
+        }
+        return golsNaoDetalhados
     }
 
 }

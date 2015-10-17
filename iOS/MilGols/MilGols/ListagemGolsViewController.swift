@@ -11,9 +11,8 @@ import CoreData
 
 class ListagemGolsViewController: UITableViewController {
     
-    var gol = Gol()
     private var managedContext: NSManagedObjectContext!
-    var golsNaoDetalhados = [Gol]()
+    var golsNaoDetalhados = [[Gol]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +20,8 @@ class ListagemGolsViewController: UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext!
 
+        recarregarGolsNaoDetalhados()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,41 +31,35 @@ class ListagemGolsViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        recarregarGolsNaoDetalhados()
-        self.tableView.reloadData()
         //gol.getGolsNaoDetalhados()
     }
     
     func recarregarGolsNaoDetalhados()
     {
-        let fetchRequest = NSFetchRequest(entityName: "Gol")
+        let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
+        let gol = Gol(entity: entityGol!, insertIntoManagedObjectContext: managedContext)
         
-        do {
-            if let gols = try managedContext.executeFetchRequest(fetchRequest) as? [Gol] {
-                golsNaoDetalhados = gols
-            }
-        } catch {
-            fatalError("Erro ao carregar listagem de gols não detalhados")
-        }
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return golsNaoDetalhados.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("GolAtual", forIndexPath: indexPath) as UITableViewCell
-        
-        let gol = golsNaoDetalhados[indexPath.row]
-        let cell = dequeued as! CelulaGolNaoDetalhado
-        cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
-        
-        return cell
+        self.golsNaoDetalhados.insert(gol.getGolsNaoDetalhados(managedContext), atIndex: 0)
+        self.tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return golsNaoDetalhados[0].count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        //let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("GolAtual", forIndexPath: indexPath) as UITableViewCell
+        
+        let gol = golsNaoDetalhados[indexPath.section][indexPath.row]
+        let cell = CelulaGolNaoDetalhado()
+        cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
+        
+        return cell
     }
     
 
