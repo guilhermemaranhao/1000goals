@@ -48,11 +48,11 @@ class Gol: NSManagedObject
         
     }
     
-    func getGolsNaoDetalhados(managedContext: NSManagedObjectContext?) -> [Gol]
+    func getGols(managedContext: NSManagedObjectContext?, detalhados: Bool) -> [Gol]
     {
         let fetchRequest = NSFetchRequest(entityName: "Gol")
         
-        let criteria = NSPredicate(format: "detalhado == false")
+        let criteria = NSPredicate(format: "detalhado == %@", detalhados)
         fetchRequest.predicate = criteria
         
         var erro: NSError?

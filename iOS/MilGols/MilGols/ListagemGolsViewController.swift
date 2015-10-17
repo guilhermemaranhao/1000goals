@@ -13,6 +13,24 @@ class ListagemGolsViewController: UITableViewController {
     
     private var managedContext: NSManagedObjectContext!
     var golsNaoDetalhados = [[Gol]]()
+    var golsDetalhados = [[Gol]]()
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    let segmentoGolsNaoDetalhados = 0
+    let segmentoGolsDetalhados = 1
+    
+    @IBAction func segmentoAlterado(sender: UISegmentedControl) {
+        
+        if (segmentedControl.selectedSegmentIndex == segmentoGolsNaoDetalhados)
+        {
+            self.recarregarGolsNaoDetalhados()
+        }
+        else if (segmentedControl.selectedSegmentIndex == segmentoGolsDetalhados)
+        {
+            self.recarregarGolsDetalhados()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +49,6 @@ class ListagemGolsViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //gol.getGolsNaoDetalhados()
     }
     
     func recarregarGolsNaoDetalhados()
@@ -39,7 +56,16 @@ class ListagemGolsViewController: UITableViewController {
         let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
         let gol = Gol(entity: entityGol!, insertIntoManagedObjectContext: managedContext)
         
-        self.golsNaoDetalhados.insert(gol.getGolsNaoDetalhados(managedContext), atIndex: 0)
+        self.golsNaoDetalhados.insert(gol.getGols(managedContext, detalhados: false), atIndex: 0)
+        self.tableView.reloadData()
+    }
+    
+    func recarregarGolsDetalhados()
+    {
+        let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
+        let gol = Gol(entity: entityGol!, insertIntoManagedObjectContext: managedContext)
+        
+        self.golsDetalhados.insert(gol.getGols(managedContext, detalhados: true), atIndex: 0)
         self.tableView.reloadData()
     }
     
@@ -48,16 +74,35 @@ class ListagemGolsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return golsNaoDetalhados[0].count
+        if (segmentedControl.selectedSegmentIndex == segmentoGolsNaoDetalhados)
+        {
+            return golsNaoDetalhados[0].count
+        }
+        else if (segmentedControl.selectedSegmentIndex == segmentoGolsDetalhados)
+        {
+            return golsDetalhados[0].count
+        }
+        return 0
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         //let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("GolAtual", forIndexPath: indexPath) as UITableViewCell
         
-        let gol = golsNaoDetalhados[indexPath.section][indexPath.row]
         let cell = CelulaGolNaoDetalhado()
-        cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
+        if (segmentedControl.selectedSegmentIndex == segmentoGolsNaoDetalhados)
+        {
+            let gol = golsNaoDetalhados[indexPath.section][indexPath.row]
+            //let cell = CelulaGolNaoDetalhado()
+            cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
+        }
+        else if (segmentedControl.selectedSegmentIndex == segmentoGolsDetalhados)
+        {
+            let gol = golsDetalhados[indexPath.section][indexPath.row]
+            //let cell = CelulaGolNaoDetalhado()
+            cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
+        }
         
         return cell
     }
