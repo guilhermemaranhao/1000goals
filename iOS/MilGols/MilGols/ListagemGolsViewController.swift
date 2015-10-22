@@ -14,6 +14,7 @@ class ListagemGolsViewController: UITableViewController {
     private var managedContext: NSManagedObjectContext!
     var golsNaoDetalhados = [[Gol]]()
     var golsDetalhados = [[Gol]]()
+    var golSelecionado:Gol!
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -107,15 +108,24 @@ class ListagemGolsViewController: UITableViewController {
         return cell
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "abrirNovoDetalhamentoGol")
+        {
+            if (segmentedControl.selectedSegmentIndex == segmentoGolsNaoDetalhados)
+            {
+                golSelecionado = golsNaoDetalhados[self.tableView.indexPathForSelectedRow!.section][self.tableView.indexPathForSelectedRow!.row]
+                
+                (segue.destinationViewController as!
+                    NovoDetalhamentoGolTableViewController).golSelecionado = self.golSelecionado
+            }
+        }
     }
-    */
+
 
 }

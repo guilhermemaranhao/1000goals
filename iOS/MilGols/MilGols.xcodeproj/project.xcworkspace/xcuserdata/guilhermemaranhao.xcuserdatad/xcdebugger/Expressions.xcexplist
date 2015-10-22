@@ -20,15 +20,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ListagemGolsViewController.tableView(UITableView, didSelectRowAtIndexPath : NSIndexPath) -&gt; ():ListagemGolsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "golsNaoDetalhados[indexPath.section][indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ListagemGolsViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():ListagemGolsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Gol.getGolsNaoDetalhados(NSManagedObjectContext?) -&gt; [Gol]:Gol.swift">
+      </ContextState>
+      <ContextState
          contextName = "ListagemGolsViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:ListagemGolsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "golsNaoDetalhados.count">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Gol.getGolsNaoDetalhados(NSManagedObjectContext?) -&gt; [Gol]:Gol.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

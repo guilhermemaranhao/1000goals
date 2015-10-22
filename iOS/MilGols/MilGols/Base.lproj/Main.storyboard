@@ -117,7 +117,7 @@
         <!--Lista Tipos Gol Table View Controller-->
         <scene sceneID="Bhq-8Z-rSx">
             <objects>
-                <tableViewController id="88w-h1-GdX" customClass="ListaTiposGolTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListaTiposGolTableViewController" id="88w-h1-GdX" customClass="ListaTiposGolTableViewController" customModule="MilGols" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fGP-2V-ibC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,15 +235,16 @@
                             <outlet property="delegate" destination="88w-h1-GdX" id="hf1-Cy-8aP"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="WD5-7j-3H2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6H-oq-EcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2056" y="-313"/>
+            <point key="canvasLocation" x="2098" y="73"/>
         </scene>
-        <!--Detalhamento Gol Table View Controller-->
+        <!--Novo Detalhamento Gol Table View Controller-->
         <scene sceneID="9PC-uI-R5Z">
             <objects>
-                <tableViewController id="0jx-Qa-pM2" customClass="DetalhamentoGolTableViewController" sceneMemberID="viewController">
+                <tableViewController id="0jx-Qa-pM2" customClass="NovoDetalhamentoGolTableViewController" customModule="MilGols" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zox-2e-k27">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,7 +269,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="88w-h1-GdX" kind="show" id="ub8-sp-Rt5"/>
+                                            <segue destination="88w-h1-GdX" kind="show" id="tbE-G7-9yI"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cA5-ia-QfY">
