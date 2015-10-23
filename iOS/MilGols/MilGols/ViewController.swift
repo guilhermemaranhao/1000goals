@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
-    
+    private var managedContext: NSManagedObjectContext!
     @IBOutlet weak var marcadorGol: UIButton!
 
     @IBAction func registrarGol(sender: AnyObject) {
-        let gol = Gol()
-        gol.registrarGol()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext!
+        
+        let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
+        let gol = Gol(entity: entityGol!, insertIntoManagedObjectContext: managedContext)
+
+        gol.registrarGol(managedContext)
     }
 }
 

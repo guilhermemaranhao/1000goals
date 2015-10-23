@@ -8,23 +8,20 @@
 
 import Foundation
 import CoreData
-import UIKit
 
-class Gol
+class Gol: NSManagedObject
 {
-    private var managedContext: NSManagedObjectContext!
     
-    func registrarGol()
+    func registrarGol(managedContext: NSManagedObjectContext?)
     {
-        let gol = getGolInstance()
         let dataCorrente = NSDate()
-        gol.setValue(dataCorrente, forKey: "datahora")
-        gol.setValue(false, forKey: "detalhado")
+        self.datahora = dataCorrente
+        self.detalhado = false
         
         var erro: NSError?
         do
         {
-            try managedContext.save()
+            try managedContext!.save()
         }
         catch let erro1 as NSError
         {
@@ -36,11 +33,12 @@ class Gol
         let fetchRequest = NSFetchRequest(entityName: "Gol")
         
         do{
-            let results = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
-            print("\(results)")
-            print("Primeiro gol marcado: \(results?.first)")
-            print("Último gol marcado: \(results?.last)")
-            print("quantidade de gols marcados: \(results?.count)")
+            let results = try managedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            for result in results! {
+                if let dataHora = result.valueForKey("datahora") as? NSDate, detalhado = result.valueForKey("detalhado") as? Bool {
+                    print("Gol! \(dataHora) - \(detalhado)")
+                }
+            }
         }
         catch let erro1 as NSError
         {
@@ -50,29 +48,26 @@ class Gol
         
     }
     
-    private func getGolInstance() -> NSManagedObject
+    func getGols(managedContext: NSManagedObjectContext?, detalhados: Bool) -> [Gol]
     {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        managedContext = appDelegate.managedObjectContext!
+        let fetchRequest = NSFetchRequest(entityName: "Gol")
         
-        let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
-        return NSManagedObject(entity: entityGol!, insertIntoManagedObjectContext: managedContext)
-    }
-    
-    func getGolsNaoDetalhados()
-    {
-        let consultaGols = NSFetchRequest(entityName: "Gol")
-        consultaGols.predicate
+        let criteria = NSPredicate(format: "detalhado == %@", detalhados)
+        fetchRequest.predicate = criteria
         
-        do
-        {
-            let golsNaoDetalhados = try managedContext.executeFetchRequest(consultaGols) as? [NSManagedObject]
-            gols
+        var erro: NSError?
+        var golsNaoDetalhados = [Gol]()
+        do{
+            if let results = try managedContext!.executeFetchRequest(fetchRequest) as? [Gol] {
+                golsNaoDetalhados = results
+            }
         }
-        catch let erro as NSError
+        catch let erro1 as NSError
         {
-            
+            erro = erro1
+            print("Gols não encontrados \(erro), \(erro!.userInfo)")
         }
+        return golsNaoDetalhados
     }
 
 }

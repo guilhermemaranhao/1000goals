@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Gol" syncable="YES">
-        <attribute name="datahora" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="detalhado" optional="YES" attributeType="Boolean" syncable="YES"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Estilo" representedClassName=".Estilo" syncable="YES">
+        <attribute name="descricao" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="gols" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gol" inverseName="estilo" inverseEntity="Gol" syncable="YES"/>
+    </entity>
+    <entity name="Gol" representedClassName=".Gol" syncable="YES">
+        <attribute name="datahora" attributeType="Date" syncable="YES"/>
+        <attribute name="detalhado" attributeType="Boolean" syncable="YES"/>
+        <relationship name="estilo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Estilo" inverseName="gols" inverseEntity="Estilo" syncable="YES"/>
+        <relationship name="tipo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tipo" inverseName="gols" inverseEntity="Tipo" syncable="YES"/>
+    </entity>
+    <entity name="Tipo" representedClassName=".Tipo" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="gols" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gol" inverseName="tipo" inverseEntity="Gol" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Gol" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="Gol" positionX="-36" positionY="9" width="128" height="105"/>
+        <element name="Estilo" positionX="-27" positionY="45" width="128" height="90"/>
+        <element name="Tipo" positionX="-27" positionY="63" width="128" height="90"/>
     </elements>
 </model>

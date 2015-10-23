@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ListagemGolsViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:ListagemGolsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "golsNaoDetalhados[indexPath.section]">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "golsNaoDetalhados">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ListagemGolsViewController.tableView(UITableView, didSelectRowAtIndexPath : NSIndexPath) -&gt; ():ListagemGolsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "golsNaoDetalhados[indexPath.section][indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ListagemGolsViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():ListagemGolsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Gol.getGolsNaoDetalhados(NSManagedObjectContext?) -&gt; [Gol]:Gol.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ListagemGolsViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:ListagemGolsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "golsNaoDetalhados.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
