@@ -8,11 +8,12 @@
 
 
 import UIKit
+import CoreData
 
 class NovoDetalhamentoGolTableViewController: UITableViewController, ListaTiposGolProtocol {
     
     var golSelecionado:Gol!
-    
+
     //Linhas do formulário
     let linhaComoFoi = 0
     
@@ -29,9 +30,13 @@ class NovoDetalhamentoGolTableViewController: UITableViewController, ListaTiposG
         {
             let listaTiposGolViewController:ListaTiposGolTableViewController = storyboard.instantiateViewControllerWithIdentifier("ListaTiposGolTableViewController") as! ListaTiposGolTableViewController
             listaTiposGolViewController.delegate = self
-            listaTiposGolViewController.tipoGolSelecionado = golSelecionado
-            self.navigationController?
-            
+            listaTiposGolViewController.tipoGolSelecionado = golSelecionado.tipo
+            self.navigationController?.pushViewController(listaTiposGolViewController, animated: true)
         }
+    }
+    
+    func tipoGolSelecionado(tipoGol: Tipo)
+    {
+        golSelecionado.tipo = tipoGol
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Gol+CoreDataProperties.swift
+//  Tipo+CoreDataProperties.swift
 //  MilGols
 //
 //  Created by Guilherme Maranhao on 22/10/15.
@@ -12,11 +12,10 @@
 import Foundation
 import CoreData
 
-extension Gol {
+extension Tipo {
 
-    @NSManaged var datahora: NSDate?
-    @NSManaged var detalhado: NSNumber?
-    @NSManaged var estilo: Estilo?
-    @NSManaged var tipo: Tipo?
+    @NSManaged var id: NSNumber?
+    @NSManaged var descricao: String?
+    @NSManaged var gols: NSSet?
 
 }
