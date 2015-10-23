@@ -14,7 +14,7 @@ import java.util.Calendar;
 public final class Logger{
 
     private static final String logDirectoryPath = "/sdcard/milgols/";
-    private static final String logFilePath = "/sdcard/mobmark/milgols.txt";
+    private static final String logFilePath = "/sdcard/milgols/milgols.txt";
     private static FileWriter logFileWriter;
     private static final String LOGGER_TAG = "Logger.java";
     private static final String ERROR_TAG = "E";
