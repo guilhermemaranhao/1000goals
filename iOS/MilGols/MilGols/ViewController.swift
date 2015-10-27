@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
     @IBAction func registrarGol(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        managedContext = appDelegate.managedObjectContext!
+        managedContext = appDelegate.managedObjectContext
         
         let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
         let gol = Gol(entity: entityGol!, insertIntoManagedObjectContext: managedContext)

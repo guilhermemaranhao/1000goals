@@ -37,7 +37,7 @@ class ListagemGolsViewController: UITableViewController {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        managedContext = appDelegate.managedObjectContext!
+        managedContext = appDelegate.managedObjectContext
 
         recarregarGolsNaoDetalhados()
         self.tableView.reloadData()

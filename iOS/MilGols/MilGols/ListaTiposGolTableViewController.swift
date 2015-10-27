@@ -17,33 +17,50 @@ class ListaTiposGolTableViewController: UITableViewController {
 
     private var managedContext: NSManagedObjectContext!
     var delegate: ListaTiposGolProtocol?
-    var tipoGolSelecionado:Tipo?
-    var tiposGol: [Tipo]?
+    var tipoGolSelecionado:Tipo!
+    var tiposGol = [[Tipo]]()
     
     override func viewDidLoad() {
-        self.viewDidLoad()
+        super.viewDidLoad()
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
         
-        let entityTipo = NSEntityDescription.entityForName("Tipo", inManagedObjectContext: managedContext)
-        let tipo = Tipo(entity: entityTipo!, insertIntoManagedObjectContext: managedContext)
-        tipo.getTipos(<#T##managedContext: NSManagedObjectContext?##NSManagedObjectContext?#>)
+        self.tiposGol.insert(getTipos(), atIndex: 0)
+        self.tableView.reloadData()
     }
+    
+    func getTipos() -> [Tipo]
+    {
+        let fetchResult = NSFetchRequest(entityName: "Tipo")
+        do
+        {
+            let results = try managedContext!.executeFetchRequest(fetchResult) as! [Tipo]
+            return results
+        }
+        catch {
+            fatalError("Erro ao carregar tipos de gol")
+        }
+
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return [tiposGol].count
+    }
+
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: CelulaGolNaoDetalhado tableView.dequeueReusableCellWithIdentifier("GolAtual", forIndexPath: indexPath) as! CelulaGolNaoDetalhado
-        
-    
-            let gol = golsDetalhados[indexPath.section][indexPath.row]
-            //let cell = CelulaGolNaoDetalhado()
-            cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
+        let cell: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+        let tipo = tiposGol[indexPath.section][indexPath.row]
+        cell.textLabel?.text = "\(tipo.descricao)"
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        <#code#>
-    }
+    
 }

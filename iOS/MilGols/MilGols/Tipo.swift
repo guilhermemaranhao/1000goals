@@ -13,6 +13,8 @@ class Tipo: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
     
+    static var tipos: [Int: String] = [1: "Perna direita", 2: "Cabeçada", 3: "Canhota", 4: "Barriga", 5: "Mão"]
+    
     func getTipos(managedContext: NSManagedObjectContext?) -> [Tipo]
     {
         let fetchRequest = NSFetchRequest(entityName: "Tipo")
