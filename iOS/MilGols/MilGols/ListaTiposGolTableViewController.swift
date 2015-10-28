@@ -49,13 +49,13 @@ class ListaTiposGolTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [tiposGol].count
+        return tiposGol[0].count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+        let cell = tableView.dequeueReusableCellWithIdentifier("tipo", forIndexPath: indexPath)
         let tipo = tiposGol[indexPath.section][indexPath.row]
         cell.textLabel?.text = "\(tipo.descricao)"
         
