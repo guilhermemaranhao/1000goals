@@ -96,13 +96,13 @@ class ListagemGolsViewController: UITableViewController {
         {
             let gol = golsNaoDetalhados[indexPath.section][indexPath.row]
             //let cell = CelulaGolNaoDetalhado()
-            cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
+            cell.textLabel?.text = "\(gol.datahora!) - \(gol.detalhado!)"
         }
         else if (segmentedControl.selectedSegmentIndex == segmentoGolsDetalhados)
         {
             let gol = golsDetalhados[indexPath.section][indexPath.row]
             //let cell = CelulaGolNaoDetalhado()
-            cell.textLabel?.text = "\(gol.datahora) - \(gol.detalhado)"
+            cell.textLabel?.text = "\(gol.datahora!) - \(gol.detalhado!)"
         }
         
         return cell

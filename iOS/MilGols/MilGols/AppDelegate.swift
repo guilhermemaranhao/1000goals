@@ -80,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 URL: persistentStoreURL,
                 options: [NSMigratePersistentStoresAutomaticallyOption: true,
                     NSInferMappingModelAutomaticallyOption: true])
+            
         } catch {
             fatalError("Persisten store error! \(error)")
         }

@@ -22,21 +22,19 @@ class NovoDetalhamentoGolTableViewController: UITableViewController, ListaTiposG
         
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        if (indexPath.row == linhaComoFoi)
-        {
-            let listaTiposGolViewController:ListaTiposGolTableViewController = storyboard.instantiateViewControllerWithIdentifier("ListaTiposGolTableViewController") as! ListaTiposGolTableViewController
-            listaTiposGolViewController.delegate = self
-            listaTiposGolViewController.tipoGolSelecionado = golSelecionado.tipo
-            self.navigationController?.pushViewController(listaTiposGolViewController, animated: true)
-        }
-    }
-    
     func tipoGolSelecionado(tipoGol: Tipo)
     {
         golSelecionado.tipo = tipoGol
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "abrirListagemDeTiposDeGols")
+        {
+            let listaTiposGolViewController:ListaTiposGolTableViewController = segue.destinationViewController as! ListaTiposGolTableViewController
+            listaTiposGolViewController.delegate = self
+            listaTiposGolViewController.tipoGolSelecionado = golSelecionado.tipo
+        }
+
     }
 }

@@ -32,16 +32,7 @@ class ListaTiposGolTableViewController: UITableViewController {
     
     func getTipos() -> [Tipo]
     {
-        let fetchResult = NSFetchRequest(entityName: "Tipo")
-        do
-        {
-            let results = try managedContext!.executeFetchRequest(fetchResult) as! [Tipo]
-            return results
-        }
-        catch {
-            fatalError("Erro ao carregar tipos de gol")
-        }
-
+        return Tipo.getTipos(managedContext)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -57,7 +48,7 @@ class ListaTiposGolTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("tipo", forIndexPath: indexPath)
         let tipo = tiposGol[indexPath.section][indexPath.row]
-        cell.textLabel?.text = "\(tipo.descricao)"
+        cell.textLabel?.text = "\(tipo.descricao!)"
         
         return cell
     }

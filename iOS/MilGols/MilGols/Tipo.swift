@@ -15,9 +15,11 @@ class Tipo: NSManagedObject {
     
     static var tipos: [Int: String] = [1: "Perna direita", 2: "Cabeçada", 3: "Canhota", 4: "Barriga", 5: "Mão"]
     
-    func getTipos(managedContext: NSManagedObjectContext?) -> [Tipo]
+    static func getTipos(managedContext: NSManagedObjectContext?) -> [Tipo]
     {
         let fetchRequest = NSFetchRequest(entityName: "Tipo")
+        let order = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [order]
         
         var erro: NSError?
         var tipos = [Tipo]()
