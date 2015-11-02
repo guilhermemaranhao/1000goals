@@ -9,7 +9,7 @@ tools:context="info.androidhive.materialtabs.fragments.OneFragment">
     android:id="@+id/ball_image_btn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:src="@drawable/ball_2_64"
+    android:src="@drawable/soccer_4_64"
     android:background="@android:color/transparent"
     />
 

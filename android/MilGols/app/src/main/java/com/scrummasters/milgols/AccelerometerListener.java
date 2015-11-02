@@ -86,7 +86,7 @@ public class AccelerometerListener implements SensorEventListener{
     private void sendNotification()
     {
         Notification.Builder builder = new Notification.Builder(context);
-        builder.setSmallIcon(R.drawable.ball_2_64);
+        builder.setSmallIcon(R.drawable.soccer_4_64);
 //        TypedValue typedValue = new TypedValue();
 //        context.getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
         int color = 0xff9800;
