@@ -3,6 +3,70 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "NovoDetalhamentoGolTableViewController.viewDidLoad() -&gt; ():NovoDetalhamentoGolTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ListagemGolsViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:ListagemGolsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "golsNaoDetalhados.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NovoDetalhamentoGolTableViewController.tipoGolSelecionado(Tipo) -&gt; ():NovoDetalhamentoGolTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tipoGol.descricao">
+            </PersistentString>
+            <PersistentString
+               value = "tipoGol.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NovoDetalhamentoGolTableViewController.getTipoGolSelecionado(Tipo) -&gt; ():NovoDetalhamentoGolTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.golSelecionado.datahora">
+            </PersistentString>
+            <PersistentString
+               value = "self.golSelecionado!.detalhado">
+            </PersistentString>
+            <PersistentString
+               value = "self.golSelecionado!.datahora">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ListaTiposGolTableViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():ListaTiposGolTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ListagemGolsViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():ListagemGolsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.golSelecionado.detalhado">
+            </PersistentString>
+            <PersistentString
+               value = "self.golSelecionado.datahora">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Gol.detalhar() -&gt; ():Gol.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.detalhado">
+            </PersistentString>
+            <PersistentString
+               value = "self.tipo">
+            </PersistentString>
+            <PersistentString
+               value = "self.datahora">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ListagemGolsViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:ListagemGolsViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -28,18 +92,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ListagemGolsViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():ListagemGolsViewController.swift">
+         contextName = "NovoDetalhamentoGolTableViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:NovoDetalhamentoGolTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NovoDetalhamentoGolTableViewController.detalharGol(AnyObject) -&gt; ():NovoDetalhamentoGolTableViewController.swift">
       </ContextState>
       <ContextState
          contextName = "Gol.getGolsNaoDetalhados(NSManagedObjectContext?) -&gt; [Gol]:Gol.swift">
       </ContextState>
       <ContextState
-         contextName = "ListagemGolsViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:ListagemGolsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "golsNaoDetalhados.count">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "NovoDetalhamentoGolTableViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():NovoDetalhamentoGolTableViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
