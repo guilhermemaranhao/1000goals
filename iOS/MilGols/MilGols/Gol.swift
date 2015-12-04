@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class Gol: NSManagedObject
+class Gol: NSManagedObject, NSURLSessionDelegate
 {
     
     func registrarGol(managedContext: NSManagedObjectContext?)
@@ -21,8 +21,8 @@ class Gol: NSManagedObject
         var erro: NSError?
         do
         {
-            try self.managedObjectContext?.save()
-            //try managedContext!.save()
+            try self.managedObjectContext!.save()
+            self.registrarGolBackEnd()
         }
         catch let erro1 as NSError
         {
@@ -48,6 +48,13 @@ class Gol: NSManagedObject
         }
         
     }
+    
+    private func registrarGolBackEnd()
+    {
+        
+    }
+    
+    override func 
     
     static func getGols(managedContext: NSManagedObjectContext?, detalhados: Bool) -> [Gol]
     {

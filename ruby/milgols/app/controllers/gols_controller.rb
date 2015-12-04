@@ -1,0 +1,2 @@
+class GolsController < ApplicationController
+end
