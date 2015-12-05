@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  post :logar, :controller => :application
+  resources :sessions
 
   get :index, :controller => :gols
 end
