@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let httpHelper = HTTPHelper()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -28,7 +29,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         catch {
             fatalError("Erro ao carregar tipos de gol")
         }
+        
+        logar()
+        
         return true
+    }
+    
+    private func logar(userEmail:String = "guilherme@milgols.com", senha:String = "teste123") {
+        //Cria requisição http e seta o cabeçalho da requisição.
+        let httpRequest = httpHelper.buildRequest("logar/", method: "POST", authType: HTTPRequestAuthType.None)
+        
+        //Envia o corpo da requisição.
+        httpRequest.HTTPBody = "{\"email\":\"\(userEmail)\",\"senha\":\"\(senha)\"}".dataUsingEncoding(NSUTF8StringEncoding)
+        
+        //Envia a requisição.
+        httpHelper.sendRequest(httpRequest, completion: {(data:NSData!, error:NSError!) in
+            if error != nil {
+                let errorMessage = self.httpHelper.getErrorMessage(error)
+                //self.displayAlertMessage("Error", alertDescription: errorMessage as String)
+                
+                return
+            }
+        })
     }
 
     func applicationWillResignActive(application: UIApplication) {

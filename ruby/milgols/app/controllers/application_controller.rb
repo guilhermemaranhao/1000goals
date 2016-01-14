@@ -8,10 +8,13 @@ class ApplicationController < ActionController::Base
   #  p "Destruir cookies do usuário"
   #end
 
+  before_filter :verificar_sessao
 
   private
-  def require_login
-
+  def verificar_sessao
+    if (params[:id_usuario] && session[:current_user_id] != params[:id_usuario])
+      raise "Seção inválida"
+    end
   end
 
 end

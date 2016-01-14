@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :sessions
+  root 'gols#index'
 
-  get :index, :controller => :gols
+  post :logar, :controller => :usuarios
+
 end

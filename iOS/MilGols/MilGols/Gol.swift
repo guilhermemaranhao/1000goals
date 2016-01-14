@@ -54,8 +54,6 @@ class Gol: NSManagedObject, NSURLSessionDelegate
         
     }
     
-    override func 
-    
     static func getGols(managedContext: NSManagedObjectContext?, detalhados: Bool) -> [Gol]
     {
         let fetchRequest = NSFetchRequest(entityName: "Gol")
