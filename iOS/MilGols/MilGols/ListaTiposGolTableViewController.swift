@@ -10,14 +10,14 @@ import UIKit
 import CoreData
 
 protocol ListaTiposGolProtocol {
-    func tipoGolSelecionado(tipoGol: Tipo)
+    func getTipoGolSelecionado(tipoGol: Tipo)
 }
 
 class ListaTiposGolTableViewController: UITableViewController {
 
     private var managedContext: NSManagedObjectContext!
     var delegate: ListaTiposGolProtocol?
-    var tipoGolSelecionado:Tipo!
+    var tipoGolSelecionado:Tipo?
     var tiposGol = [[Tipo]]()
     
     override func viewDidLoad() {
@@ -53,5 +53,9 @@ class ListaTiposGolTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.delegate?.getTipoGolSelecionado(tiposGol[tableView.indexPathForSelectedRow!.section][tableView.indexPathForSelectedRow!.row])
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
 }

@@ -14,7 +14,7 @@ class ListagemGolsViewController: UITableViewController {
     private var managedContext: NSManagedObjectContext!
     var golsNaoDetalhados = [[Gol]]()
     var golsDetalhados = [[Gol]]()
-    var golSelecionado:Gol!
+    var golSelecionado:Gol?
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -35,12 +35,6 @@ class ListagemGolsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        managedContext = appDelegate.managedObjectContext
-
-        recarregarGolsNaoDetalhados()
-        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,23 +44,23 @@ class ListagemGolsViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext
+        
+        recarregarGolsNaoDetalhados()
+        self.tableView.reloadData()
     }
     
     func recarregarGolsNaoDetalhados()
     {
-        let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
-        let gol = Gol(entity: entityGol!, insertIntoManagedObjectContext: managedContext)
-        
-        self.golsNaoDetalhados.insert(gol.getGols(managedContext, detalhados: false), atIndex: 0)
+        self.golsNaoDetalhados.insert(Gol.getGols(managedContext, detalhados: false), atIndex: 0)
         self.tableView.reloadData()
     }
     
     func recarregarGolsDetalhados()
     {
-        let entityGol = NSEntityDescription.entityForName("Gol", inManagedObjectContext: managedContext)
-        let gol = Gol(entity: entityGol!, insertIntoManagedObjectContext: managedContext)
-        
-        self.golsDetalhados.insert(gol.getGols(managedContext, detalhados: true), atIndex: 0)
+        self.golsDetalhados.insert(Gol.getGols(managedContext, detalhados: true), atIndex: 0)
         self.tableView.reloadData()
     }
     
@@ -115,15 +109,19 @@ class ListagemGolsViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if (segue.identifier == "abrirNovoDetalhamentoGol")
+        if (segue.identifier == "abrirDetalhamentoGol")
         {
             if (segmentedControl.selectedSegmentIndex == segmentoGolsNaoDetalhados)
             {
                 golSelecionado = golsNaoDetalhados[self.tableView.indexPathForSelectedRow!.section][self.tableView.indexPathForSelectedRow!.row]
-                
-                (segue.destinationViewController as!
-                    NovoDetalhamentoGolTableViewController).golSelecionado = self.golSelecionado
             }
+            else
+            {
+                golSelecionado = golsDetalhados[self.tableView.indexPathForSelectedRow!.section][self.tableView.indexPathForSelectedRow!.row]
+            }
+            (segue.destinationViewController as!
+                    NovoDetalhamentoGolTableViewController).golSelecionado = self.golSelecionado
+            
         }
     }
 

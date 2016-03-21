@@ -24,6 +24,7 @@
 		A5E9878E1BAD058A000050B8 /* Gol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9878C1BAD058A000050B8 /* Gol.swift */; };
 		A5E9878F1BAD058A000050B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9878D1BAD058A000050B8 /* ViewController.swift */; };
 		A5E987941BAD05E3000050B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E987921BAD05E3000050B8 /* Main.storyboard */; };
+		A5EF58C91C1A633E008BCF1F /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EF58C81C1A633E008BCF1F /* HTTPHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		A5E9878C1BAD058A000050B8 /* Gol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gol.swift; sourceTree = "<group>"; };
 		A5E9878D1BAD058A000050B8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5E987931BAD05E3000050B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5EF58C81C1A633E008BCF1F /* HTTPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		A5E987661BAD04BD000050B8 /* MilGols */ = {
 			isa = PBXGroup;
 			children = (
+				A5EF58C71C1A632B008BCF1F /* Utils */,
 				A58638F61BC49E3000588BDE /* View */,
 				A5E987921BAD05E3000050B8 /* Main.storyboard */,
 				A5E987901BAD058E000050B8 /* Model */,
@@ -167,6 +170,14 @@
 				A5D25CCB1BD70E4100755160 /* ListaTiposGolTableViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		A5EF58C71C1A632B008BCF1F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF58C81C1A633E008BCF1F /* HTTPHelper.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A881161BBB2FEB00B3C1DF /* ListagemGolsViewController.swift in Sources */,
+				A5EF58C91C1A633E008BCF1F /* HTTPHelper.swift in Sources */,
 				A572E84C1BD9B0E000825BD6 /* Estilo.swift in Sources */,
 				A572E84B1BD9B0E000825BD6 /* Estilo+CoreDataProperties.swift in Sources */,
 				A5E9876A1BAD04BD000050B8 /* AppDelegate.swift in Sources */,
