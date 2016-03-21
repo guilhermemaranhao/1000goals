@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">MilGols</string>
+    <string name="app_name">MobMark</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+
+
+    <string name="promo">Promoções</string>
+
+
+    <string name="lojas">Lojas</string>
+
+    <string name="favoritos">Favoritos</string>
 </resources>

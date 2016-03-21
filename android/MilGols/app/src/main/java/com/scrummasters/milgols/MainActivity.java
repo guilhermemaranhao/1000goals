@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.scrummasters.milgols.dao.GolDAO;
 import com.scrummasters.milgols.model.Gol;
+import com.scrummasters.milgols.services.SearchPromoTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageButton ballImageBtn;
     private Intent intentService;
-    private static final String MAIN_TAG = "MainActivity.java";
+    private static final String TAG = "MainActivity.java";
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private Runnable searchPromoRunnable;
+    private Thread searchPromoThread;
 
 
     @Override
@@ -54,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        startService();
+//        startService();
+        iniciarServicoDeBuscaDePromocao();
     }
 
 //    @Override
@@ -111,21 +115,20 @@ public class MainActivity extends AppCompatActivity {
                 if( intentService == null ){
                     intentService = new Intent(getBaseContext(), MilGolsService.class);
                     startService( intentService );
-                    Logger.d(MAIN_TAG, "startService()");
+                    Logger.d(TAG, "startService()");
                 }
 
             }catch (Exception e){
-                Logger.e(MAIN_TAG, "Error startService()");
-                Logger.e(MAIN_TAG, e.toString());
+                Logger.e(TAG, "Error startService()");
+                Logger.e(TAG, e.toString());
             }
         }
 
-
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new InsertFragment(), "ONE");
-        adapter.addFragment(new InsertFragment(), "TWO");
-        adapter.addFragment(new InsertFragment(), "THREE");
+        adapter.addFragment(new InsertFragment(), getString(R.string.promo));
+        adapter.addFragment(new InsertFragment(), getString(R.string.lojas));
+        adapter.addFragment(new InsertFragment(), getString(R.string.favoritos));
         viewPager.setAdapter(adapter);
     }
 
@@ -158,5 +161,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
+    private void iniciarServicoDeBuscaDePromocao()
+    {
+        try {
+            if( searchPromoRunnable == null ){
+                searchPromoRunnable = new SearchPromoTask(this.getApplicationContext());
+                searchPromoThread = new Thread(searchPromoRunnable);
+                searchPromoThread.start();
+                Logger.i(TAG, "searchPromoThread Started!!");
+            }
+        } catch (Exception e) {
+            Logger.d(TAG, e.toString());
+        }
+    }
 
 }
